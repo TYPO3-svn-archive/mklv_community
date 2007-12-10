@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database name="subida" defaultIdMethod="native">
+	<table name="fe_groups">
+		 <column name="uid" type="integer" required="true" primaryKey="true" autoIncrement="true" /> 	 
+		 <column name="pid" type="integer" /> 
+		 <column name="tstamp" type="integer" /> 	 
+		 <column name="title" type="varchar" size="50" />
+		 <column name="hidden" type="tinyint" />
+		 <column name="lockToDomain" type="varchar" size="250" /> 	 
+		 <column name="deleted" type="tinyint" />
+		 <column name="description" type="longvarchar" />
+		 <column name="subgroup" type="blob" />
+		 <column name="TSconfig" type="blob" />
+		 <column name="tx_mklvcommunity_icon" type="blob" /> 	 
+		 <column name="tx_mklvcommunity_visibility" type="integer" /> 
+		 <column name="tx_mklvcommunity_invitation" type="tinyint" />
+		 <column name="tx_mklvcommunity_url" type="varchar" />
+		 <column name="tx_mklvcommunity_owner" type="blob" />
+		 <column name="tx_mklvcommunity_admins" type="integer" />
+		 <column name="tx_mklvcommunity_tags" type="longvarchar" />
+	</table>
+	<table name="fe_users">
+		 <column name="uid" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+		 <column name="pid" type="integer" /> 	 
+		 <column name="tstamp" type="integer" /> 	 
+		 <column name="username" type="varchar" size="50" /> 	 
+		 <column name="password" type="varchar" size="50" /> 	 
+		 <column name="usergroup" type="blob" /> 	 
+		 <column name="disable" type="tinyint" /> 	 
+		 <column name="starttime" type="integer" /> 	 
+		 <column name="endtime" type="integer" /> 	 
+		 <column name="name" type="varchar" size="80" /> 	 
+		 <column name="address" type="longvarchar" /> 	 
+		 <column name="telephone" type="varchar" size="20" /> 	 
+		 <column name="fax" type="varchar" size="20" /> 	 
+		 <column name="email" type="varchar" size="80" /> 	 
+		 <column name="crdate" type="integer" /> 	 
+		 <column name="cruser_id" type="integer" /> 	 
+		 <column name="lockToDomain" type="varchar" size="50" />
+		 <column name="deleted" type="tinyint" />
+		 <column name="uc" type="blob" />
+		 <column name="title" type="varchar" size="40" />
+		 <column name="zip" type="varchar" size="10" /> 	 
+		 <column name="city" type="varchar" size="50" /> 	 
+		 <column name="country" type="varchar" size="40" /> 	 
+		 <column name="www" type="varchar" size="80" />
+		 <column name="company" type="varchar" size="80" />
+		 <column name="image" type="blob" />
+		 <column name="TSconfig" type="blob" />
+		 <column name="fe_cruser_id" type="integer" /> 	 
+		 <column name="lastlogin" type="integer" /> 	 
+		 <column name="is_online" type="integer" /> 	 
+		 <column name="tx_mklvcommunity_icq" type="longvarchar" /> 	 
+		 <column name="tx_mklvcommunity_privacy_flag" type="integer" /> 	 
+		 <column name="tx_mklvcommunity_buddy_confirm" type="tinyint" />
+	</table>
+	<table name="tx_mklvcommunity_unconfirmed_buddy">
+		 <column name="uid" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+		 <column name="pid" type="integer" />
+		 <column name="tstamp" type="integer" />
+		 <column name="crdate" type="integer" />
+		 <column name="cruser_id" type="integer" />
+		 <column name="deleted" type="tinyint" />
+		 <column name="hidden" type="tinyint" />
+		 <column name="user_uid" type="integer" />
+		 <column name="buddy_uid" type="integer" />
+		 <column name="hash_key" type="varchar" size="80" />
+		 <foreign-key foreignTable="fe_users">
+		 	<reference local="user_uid" foreign="uid" />
+		 </foreign-key>
+		 <foreign-key foreignTable="fe_users">
+		 	<reference local="buddy_uid" foreign="uid" />
+		 </foreign-key>
+	</table>
+	<table name="tx_mklvcommunity_buddy">
+		 <column name="uid" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+		 <column name="pid" type="integer" />
+		 <column name="tstamp" type="integer" />
+		 <column name="crdate" type="integer" />
+		 <column name="cruser_id" type="integer" />
+		 <column name="deleted" type="tinyint" />
+		 <column name="hidden" type="tinyint" />
+		 <column name="user_uid" type="integer" />
+		 <column name="buddy_uid" type="integer" />
+		 <foreign-key foreignTable="fe_users">
+		 	<reference local="user_uid" foreign="uid" />
+		 </foreign-key>
+		 <foreign-key foreignTable="fe_users">
+		 	<reference local="buddy_uid" foreign="uid" />
+		 </foreign-key>
+	</table>
+	<table name="tx_mklvcommunity_fe_users_fe_groups_MM">
+		  <column name="uid" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+		  <column name="pid" type="integer" />
+		  <column name="tstamp" type="integer" />
+		  <column name="crdate" type="integer" />
+		  <column name="cruser_id" type="integer" />
+		  <column name="deleted" type="integer" />
+		  <column name="hidden" type="tinyint" />
+		  <column name="fe_users_uid" type="blob" />
+		  <column name="fe_groups_uid" type="blob" />
+	</table>
+</database>

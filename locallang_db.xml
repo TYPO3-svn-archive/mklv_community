@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'mklv_community'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="listPluginLabel">Group List</label>
+			<label index="singlePluginLabel">Group Single</label>
+			<label index="tx_mklvcommunity_buddy.user_uid">User ID</label>
+			<label index="tx_mklvcommunity_buddy.buddy_uid">Buddy ID</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy.user_uid">User ID</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy.buddy_uid">Buddy ID</label>
+			<label index="tx_mklvcommunity_privacy_setting.ext_key">Extension key</label>
+			<label index="tx_mklvcommunity_privacy_setting.ext_field">Extension Field</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.0">All users</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.1">Friends and their buddies</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.2">Friends only</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.3">Nobody</label>
+			<label index="tx_mklvcommunity_group_invitation.user_uid">User ID</label>
+			<label index="tx_mklvcommunity_group_invitation.group_uid">Group ID</label>
+			<label index="tx_mklvcommunity_group_invitation.date">Date</label>
+			<label index="tx_mklvcommunity_group_invitation.recipient_uid">Recipient ID</label>
+			<label index="fe_users.tx_mklvcommunity_icq">ICQ</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag">Visibility</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.0">All users</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.1">Buddies and their buddies</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.2">Buddies only</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.3">Nobody</label>
+			<label index="fe_groups.tx_mklvcommunity_icon">Icon</label>
+			<label index="fe_groups.tx_mklvcommunity_visibility">Visibility</label>
+			<label index="fe_groups.tx_mklvcommunity_visibility.I.1">All users</label>
+			<label index="fe_groups.tx_mklvcommunity_visibility.I.2">Members only</label>
+			<label index="fe_groups.tx_mklvcommunity_invitation">Requires invitation</label>
+			<label index="fe_groups.tx_mklvcommunity_url">URL</label>
+			<label index="fe_groups.tx_mklvcommunity_owner">Owner</label>
+			<label index="fe_groups.tx_mklvcommunity_admins">Administrators</label>
+			<label index="fe_groups.tx_mklvcommunity_tags">Tags</label>
+			<label index="tx_mklvcommunity_buddy">Buddy</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy">Unconfirmed Buddy</label>
+			<label index="tx_mklvcommunity_privacy_setting">Privacy setting</label>
+			<label index="tx_mklvcommunity_group_invitation">Group invitation</label>
+			<label index="fe_users.tx_mklvcommunity_buddy_confirm">Buddy needs confirmation</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy.hash_key">Hash key</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="listPluginLabel">Gruppen Liste</label>
+			<label index="singlePluginLabel">Gruppe Einzelansicht</label>
+			<label index="tx_mklvcommunity_buddy.user_uid">Benutzer ID</label>
+			<label index="tx_mklvcommunity_buddy.buddy_uid">Buddy ID</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy.user_uid">Benutzer ID</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy.buddy_uid">Buddy ID</label>
+			<label index="tx_mklvcommunity_privacy_setting.ext_key">Extension key</label>
+			<label index="tx_mklvcommunity_privacy_setting.ext_field">Extension Feld</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.0">Alle Benutzer</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.1">Buddies und deren Buddies</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.2">Nur Buddies</label>
+			<label index="tx_mklvcommunity_privacy_setting.privacy_flag.I.3">Niemand</label>
+			<label index="tx_mklvcommunity_group_invitation.user_uid">Benutzer ID</label>
+			<label index="tx_mklvcommunity_group_invitation.group_uid">Gruppe ID</label>
+			<label index="tx_mklvcommunity_group_invitation.date">Datum</label>
+			<label index="tx_mklvcommunity_group_invitation.recipient_uid">Empfänger ID</label>
+			<label index="fe_users.tx_mklvcommunity_icq">ICQ</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag">Sichtbarkeit</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.0">Alle Benutzer</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.1">Buddies und deren Buddies</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.2">Nur Buddies</label>
+			<label index="fe_users.tx_mklvcommunity_privacy_flag.I.3">Niemand</label>
+			<label index="fe_groups.tx_mklvcommunity_icon">Icon</label>
+			<label index="fe_groups.tx_mklvcommunity_visibility">Sichtbarkeit</label>
+			<label index="fe_groups.tx_mklvcommunity_visibility.I.1">Alle Benutzer</label>
+			<label index="fe_groups.tx_mklvcommunity_visibility.I.2">Nur Mitglieder</label>
+			<label index="fe_groups.tx_mklvcommunity_invitation">Einladung erforderlich</label>
+			<label index="fe_groups.tx_mklvcommunity_url">URL</label>
+			<label index="fe_groups.tx_mklvcommunity_owner">Besitzer</label>
+			<label index="fe_groups.tx_mklvcommunity_admins">Administratoren</label>
+			<label index="fe_groups.tx_mklvcommunity_tags">Tags</label>
+			<label index="tx_mklvcommunity_buddy">Buddy</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy">Unbestätigter Buddy</label>
+			<label index="tx_mklvcommunity_privacy_setting">Privacy Einstellung</label>
+			<label index="tx_mklvcommunity_group_invitation">Gruppeneinladung</label>
+			<label index="fe_users.tx_mklvcommunity_buddy_confirm">Buddy muss bestätigt werden</label>
+			<label index="tx_mklvcommunity_unconfirmed_buddy.hash_key">Hash Wert</label>
+		</languageKey>
+	</data>
+</T3locallang>

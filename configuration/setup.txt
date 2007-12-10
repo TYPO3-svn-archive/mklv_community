@@ -1,0 +1,401 @@
+##########################################
+### Static template for mklv_community ###
+##########################################
+###
+### Includes configuration for all plugins
+### 
+### Make sure to clear fe_cache after editing this file!
+###
+### Author: Michael Knoll, Lars Volker
+### Package: Typo3
+### Subpackage: mklv_community
+###
+##########################################
+
+##########################################
+### TODOs							   ###
+##########################################
+
+# Split confiuration into single parts for each plugin
+# like
+# temp.tx_mklvcommunity.userDetails
+# temp.tx_mklvcommunity.userPrivacy
+# ...
+
+##########################################
+### Some file includes                 ###
+##########################################
+includeLibs.tx_lib						= EXT:lib/class.tx_lib_controller.php
+includeLibs.tx_div						= EXT:div/class.tx_div.php
+includeLibs.tx_mklvcommunity_controller = EXT:mklv_community/controllers/class.tx_mklvcommunity_controller.php
+includeLibs.tx_mklvcommunity_view		= EXT:mklv_community/views/class.tx_mklvcommunity_view.php
+includeLibs.tx_mklvcommunity_formView	= EXT:mklv_community/views/class.tx_mklvcommunity_formView.php
+includeLibs.tx_mklvcommunity_listView	= EXT:mklv_community/views/class.tx_mklvcommunity_views_listView.php
+includeLibs.tx_mklvcommunity_helper 	= EXT:mklv_community/helpers/class.tx_mklvcommunity_helper.php
+includeLibs.tx_mklvcommunity_listHelper = EXT:mklv_community/views/class.tx_mklvcommunity_views_listView.php
+includeLibs.tx_mklvcommunity_userList	= EXT:mklv_community/views/class.tx_mklvcommunity_views_userList.php
+
+##########################################
+### Plugin Configuration		       ###
+##########################################
+
+temp.tx_mklvcommunity {
+	
+	########################################
+	### Template - Settings              ###
+	########################################
+	pathToTemplateDirectory 		= EXT:mklv_community/templates
+	pathToLanguageFile 				= EXT:mklv_community/locallang.xml
+	pathToDbLanguageFile 			= EXT:mklv_community/locallang_db.xml
+	userDetailsTemplate 			= userDetails.php
+	userPrivacyTemplate 			= userPrivacy.php
+	userSearchTemplate 				= userSearch.php
+	userBuddyAddFormTemplate		= userBuddyAddForm.php
+	userBuddyConfirmTemplate		= userBuddyConfirm.php
+	userBuddyListTemplate			= userBuddyList.php
+	userSearchListTemplate			= userSearchList.php
+	userSettingsTemplate			= userSettings.php
+	userListTemplate				= userList.php
+	groupsProfileTemplate			= groupsProfile.php
+	groupsListTemplate				= groupsList.php
+	groupsEditTemplate				= groupsEdit.php
+	groupsJoinTemplate				= groupsJoin.php
+	groupsJoinConfirmationTemplate 	= groupsJoinConfirmation.php
+	groupsJoinAlreadyInGroupTemplate= groupsJoinAlreadyInGroup.php
+	groupsJoinDeleteTemplate		= groupsJoinDelete.php
+	groupJoinDeleteConfirmTemplate  = groupJoinDeleteConfirm.php
+	buddiesDeleteTemplate			= buddiesDelete.php
+	
+	########################################
+	### Settings for userDetails         ###
+	########################################
+	userDetails {
+		## Fields to be shown on userDetails page (komma separated)
+		fieldsToBeShown 		= username, uid, pid	
+	}
+	
+	########################################
+	### Login - Settings				 ###
+	########################################
+	### Defines, for which controllers and which actions a fe-user-login
+	### is required (1) and for which it is not required (0)
+	### 
+	### The controller first checks the action, then the controller, then the plugin settings
+	### So a setting of action = 1, controller = 0, plugin = 0 will make it necessary to log in for the action
+	### a setting of action = 0, controller = 1, plugin = 1 will make it necessary too
+	### which means, that you cannot make an exclude for an action!
+	
+	loginSettings {
+		## if set to 1, every controller requires login, can't be overwritten by controller login flags!
+		global = 0
+		## settings for each single plugin, only take effect, if globalLogin is set to 0!
+		pluginSettings {
+		    ## settings for userDetatils controller
+			tx_mklvcommunity_controllers_userDetails {
+				## settings for controller
+				global = 0
+			    ## settings for userDetails controller actions, only take effect, if controller is set to 0!
+				userDetailsAction = 1
+			}
+			## Settings for userList controller
+			tx_mklvcommunity_controllers_userListSettings {
+				## settings for userList controller actions, only take effect, if controller ist set to 0!
+				global = 0
+				showUserList = 1
+				showBuddyList = 1
+			}
+			## Settings for userPrivacy controller
+			tx_mklvcommunity_controllers_userPrivacy {
+				## Settings for controller
+				global = 1
+			}
+			## Settings for buddiesList controller
+			tx_mklvcommunity_controllers_buddiesList {
+				global = 1
+			}
+		}
+	}
+	
+	########################################
+	### Settings for buddyDelete         ###
+	########################################
+	buddyDelete {
+		## Page Uid where the plugin resides
+		pageId 		= 74	
+	}
+	
+	########################################
+	### Settings for buddyAdd            ###
+	########################################
+	buddyAdd {
+		## Page Uid where the plugin resides
+		pageId 		= 75	
+	}
+	
+	########################################
+	### Settings for userDetails         ###
+	########################################
+	userDetails {
+		## Page Uid where the plugin resides
+		pageId 		= 64	
+	}
+	
+	########################################
+	### Settings for userList            ###
+	########################################
+	userList {
+		## Page Uid where the plugin resides
+		pageId 		= 63	
+	}
+	
+	########################################
+	### Settings for groupsJoin          ###
+	########################################
+	groupsJoin {
+		## Page Uid where the plugin resides
+		pageId 		= 71
+	}
+	
+	########################################
+	### Settings for groupsProfile       ###
+	########################################
+	groupsProfile {
+		## Page Uid where the plugin resides
+		pageId 		= 76
+	}
+	
+	########################################
+	### Settings for groupsEdit       ###
+	########################################
+	groupsEdit {
+		## Page Uid where the plugin resides
+		pageId 		= 72
+	}
+	
+}
+
+##########################################
+### User Details Plugin 			   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userDetails            		= USER_INT
+plugin.tx_mklvcommunity_userDetails.includeLibs 	= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userDetails.php
+plugin.tx_mklvcommunity_userDetails.userFunc    	= tx_mklvcommunity_controllers_userDetails->main
+plugin.tx_mklvcommunity_userDetails.configurations  < temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userDetails    	=< plugin.tx_mklvcommunity_userDetails
+
+
+##########################################
+### User Privacy Plugin				   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userPrivacy					= USER_INT
+plugin.tx_mklvcommunity_userPrivacy.includeLibs		= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userPrivacy.php
+plugin.tx_mklvcommunity_userPrivacy.userFunc		= tx_mklvcommunity_controllers_userPrivacy->main
+plugin.tx_mklvcommunity_userPrivacy.configurations  < temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userPrivacy		=< plugin.tx_mklvcommunity_userPrivacy
+
+
+##########################################
+### User Search Plugin				   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userSearch					= USER_INT
+plugin.tx_mklvcommunity_userSearch.includeLibs		= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userSearch.php
+plugin.tx_mklvcommunity_userSearch.userFunc			= tx_mklvcommunity_controllers_userSearch->main
+plugin.tx_mklvcommunity_userSearch.configurations	< temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userSearch			=< plugin.tx_mklvcommunity_userSearch
+
+##########################################
+### User Buddy Add Plugin			   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userBuddyAdd				= USER_INT
+plugin.tx_mklvcommunity_userBuddyAdd.includeLibs	= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userBuddyAdd.php
+plugin.tx_mklvcommunity_userBuddyAdd.userFunc		= tx_mklvcommunity_controllers_userBuddyAdd->main
+plugin.tx_mklvcommunity_userBuddyAdd.configurations < temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userBuddyAdd		=< plugin.tx_mklvcommunity_userBuddyAdd
+
+##########################################
+### User List Plugin				   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userList					= USER_INT
+plugin.tx_mklvcommunity_userList.includeLibs		= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userList.php
+plugin.tx_mklvcommunity_userList.userFunc			= tx_mklvcommunity_controllers_userList->main
+plugin.tx_mklvcommunity_userList.configurations		< temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userList			=< plugin.tx_mklvcommunity_userList
+
+##########################################
+### User Settings Plugin			   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userSettings				= USER_INT
+plugin.tx_mklvcommunity_userSettings.includeLibs	= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userSettings.php
+plugin.tx_mklvcommunity_userSettings.userFunc		= tx_mklvcommunity_controllers_userSettings->main
+plugin.tx_mklvcommunity_userSettings.configurations < temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userSettings		=< plugin.tx_mklvcommunity_userSettings
+
+##########################################
+### User Menu Plugin				   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_userMenu					= USER_INT
+plugin.tx_mklvcommunity_userMenu.includeLibs		= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_userMenu.php
+plugin.tx_mklvcommunity_userMenu.userFunc			= tx_mklvcommunity_controllers_userMenu->main
+plugin.tx_mklvcommunity_userMenu.configurations		< temp.tx_mklvcommunity
+
+tt_content.list.20.mklvcommunity_userMenu			=< plugin.tx_mklvcommunity_userMenu
+
+##########################################
+### Groups List Plugin				   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_groupsList					= USER_INT
+plugin.tx_mklvcommunity_groupsList {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_groupsList.php
+	userFunc										= tx_mklvcommunity_controllers_groupsList->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_groupsList			=< plugin.tx_mklvcommunity_groupsList
+
+##########################################
+### Groups Search Plugin			   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_groupsSearch				= USER_INT
+plugin.tx_mklvcommunity_groupsSearch {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_groupsSearch.php
+	userFunc									    = tx_mklvcommunity_controllers_groupsSearch->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_groupsSearch		=< plugin.tx_mklvcommunity_groupsSearch
+
+##########################################
+### Groups Edit Plugin			       ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_groupsEdit					= USER_INT
+plugin.tx_mklvcommunity_groupsEdit {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_groupsEdit.php
+	userFunc										= tx_mklvcommunity_controllers_groupsEdit->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_groupsEdit			=< plugin.tx_mklvcommunity_groupsEdit
+
+##########################################
+### Groups Profile Plugin		       ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_groupsProfile				= USER_INT
+plugin.tx_mklvcommunity_groupsProfile {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_groupsProfile.php
+	userFunc										= tx_mklvcommunity_controllers_groupsProfile->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_groupsProfile		=< plugin.tx_mklvcommunity_groupsProfile
+
+##########################################
+### Groups Join Plugin   		       ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_groupsJoin					= USER_INT
+plugin.tx_mklvcommunity_groupsJoin {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_groupsJoin.php
+	userFunc										= tx_mklvcommunity_controllers_groupsJoin->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_groupsJoin			=< plugin.tx_mklvcommunity_groupsJoin
+
+##########################################
+### Buddies Add Plugin		       	   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_buddiesAdd					= USER_INT
+plugin.tx_mklvcommunity_buddiesAdd {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_buddiesAdd.php
+	userFunc										= tx_mklvcommunity_controllers_buddiesAdd->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_buddiesAdd			=< plugin.tx_mklvcommunity_buddiesAdd
+
+##########################################
+### Buddies List Plugin		       	   ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_buddiesList					= USER_INT
+plugin.tx_mklvcommunity_buddiesList {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_buddiesList.php
+	userFunc										= tx_mklvcommunity_controllers_buddiesList->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_buddiesList		=< plugin.tx_mklvcommunity_buddiesList
+
+##########################################
+### Buddies Delete Plugin		       ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_buddiesDelete				= USER_INT
+plugin.tx_mklvcommunity_buddiesDelete {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_buddiesDelete.php
+	userFunc										= tx_mklvcommunity_controllers_buddiesDelete->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_buddiesDelete		=< plugin.tx_mklvcommunity_buddiesDelete
+
+##########################################
+### Buddies Show relation Plugin       ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_buddiesShowRelation			= USER_INT
+plugin.tx_mklvcommunity_buddiesShowRelation {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_buddiesShowRelation.php
+	userFunc										= tx_mklvcommunity_controllers_buddiesShowRelation->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_buddiesShowRelation =< plugin.tx_mklvcommunity_buddiesShowRelation
+
+##########################################
+### System Messages Plugin             ###
+##########################################
+
+## Make plugin available in tt_content
+plugin.tx_mklvcommunity_systemMessages				= USER_INT
+plugin.tx_mklvcommunity_systemMessages {
+	includeLibs										= EXT:mklv_community/controllers/class.tx_mklvcommunity_controllers_systemMessages.php
+	userFunc										= tx_mklvcommunity_controllers_systemMessages->main
+	configurations									< temp.tx_mklvcommunity
+}
+
+tt_content.list.20.mklvcommunity_systemMessages 	=< plugin.tx_mklvcommunity_systemMessages

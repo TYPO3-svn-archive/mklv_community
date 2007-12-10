@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<log>
+		<ident>propel-mklv_community</ident>
+		<level>7</level>
+	</log>
+	<propel>
+		<datasources default="subida">
+			<datasource id="subida">
+				<adapter>mysql</adapter>
+				<connection>
+					<phptype>mysql</phptype>
+					<database>subida</database>
+					<hostspec>localhost</hostspec>
+					<username>root</username>
+					<password></password>
+				</connection>
+			</datasource>
+		</datasources>
+	</propel>
+</config>

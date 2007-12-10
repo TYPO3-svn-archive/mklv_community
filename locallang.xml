@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for 'mklv_community'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="template.userprivacy.header">Privacy Settings</label>
+			<label index="template.userprivacy.message">Select from the field below, which users you want to grant access on your profile page</label>
+			<label index="template.userprivacy.submit">Submit</label>
+			<label index="template.usersearch.header">User search</label>
+			<label index="template.usersearch.searchword">Searchword</label>
+			<label index="template.usersearch.submit">Search!</label>
+			<label index="template.userSearchList.header">User search result</label>
+			<label index="template.userSearchList.searchWord">Search word</label>
+			<label index="template.userSearchList.searchResultMessage">Your search led to the following results:</label>
+			<label index="template.userdetails.header">User Profile</label>
+			<label index="template.userdetails.label.uid">User ID</label>
+			<label index="template.userdetails.label.pid">Page ID</label>
+			<label index="template.userdetails.label.username">Username</label>
+			<label index="template.userdetails.label.name">Name</label>
+			<label index="template.userSettings.header">User settings</label>
+			<label index="template.userBuddyAdd.header">Add user to buddy-list</label>
+			<label index="template.userBuddyAdd.message">Please confirm, that you want to add this user to your buddy list:</label>
+			<label index="template.userBuddyAdd.username">Username</label>
+			<label index="template.userBuddyAdd.submit">Add Buddy</label>
+			<label index="template.userBuddyConfirm.header">Buddy confirmed</label>
+			<label index="template.userBuddyConfirm.message">The buddy has been confirmed successfully!</label>
+			<label index="template.userBuddyList.header">Buddies List</label>
+			<label index="template.userBuddyList.userDetailsLink">User Details</label>
+			<label index="template.userlist.header">User list</label>
+			<label index="template.groupsProfile.header">Group Profile</label>
+			<label index="template.groupsProfile.label.title">Group Title</label>
+			<label index="template.groupsProfile.label.description">Description</label>
+			<label index="template.groupsProfile.label.editGroup">Edit Group</label>
+			<label index="template.groupsList.header">Groups List</label>
+			<label index="general.labels.groupdetails">Group Details</label>
+			<label index="general.labels.groupsJoin">Join Group</label>
+			<label index="general.labels.groupsLeave">Leave Group</label>
+			<label index="general.forms.errorMsg">The form was not filled correctly, please check the marked fields!</label>
+			<label index="general.forms.notEmptyErrMsg">The field mustn't be empty!</label>
+			<label index="template.groupsEdit.header">Edit Group</label>
+			<label index="template.groupsEdit.label.groupsTitle">Title</label>
+			<label index="template.groupsEdit.label.groupsDescription">Description</label>
+			<label index="template.groupsEdit.label.submit">Submit</label>
+			<label index="template.groupsJoin.header">Join Group</label>
+			<label index="template.groupsJoin.label.submit">Submit</label>
+			<label index="template.groupsJoin.message.confirmJoin">Press 'confirm' to join the group!</label>
+			<label index="template.groupsJoinConfirmation.header">Join confirmed!</label>
+			<label index="template.groupsJoinConfirmation.message.memberOfGroup">You are now a member of the group </label>
+			<label index="template.groupsJoinAlreadyInGroup.header">You've already joined this group!</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="template.userprivacy.header">Sichtbarkeitseinstellung</label>
+			<label index="template.userprivacy.message">Bitte wählen Sie aus der Liste, welchen Benutzern Sie es erlauben möchten, Ihr Profil zu sehen:</label>
+			<label index="template.userprivacy.submit">Speichern</label>
+			<label index="template.usersearch.header">Suche nach Benutzern</label>
+			<label index="template.usersearch.searchword">Suchbegriff</label>
+			<label index="template.usersearch.submit">Suchen!</label>
+			<label index="template.userSearchList.header">Ergebnis der Benutzersuche</label>
+			<label index="template.userSearchList.searchWord">Suchbegriff</label>
+			<label index="template.userSearchList.searchResultMessage">Ihre Suche ergab die folgenden Treffer:</label>
+			<label index="template.userdetails.header">Benutzerprofil</label>
+			<label index="template.userdetails.label.uid">Benutzer ID</label>
+			<label index="template.userdetails.label.pid">Seiten ID</label>
+			<label index="template.userdetails.label.username">Benutzername</label>
+			<label index="template.userdetails.label.name">Name</label>
+			<label index="template.userSettings.header">Benutzereinstellungen</label>
+			<label index="template.userBuddyAdd.header">User zur Buddy-Liste hinzufügen</label>
+			<label index="template.userBuddyAdd.message">Bitte bestätigen Sie, dass Sie den folgenden Benutzer zum Buddy machen wollen:</label>
+			<label index="template.userBuddyAdd.username">Benutzername</label>
+			<label index="template.userBuddyAdd.submit">Buddy hinzufügen</label>
+			<label index="template.userBuddyConfirm.header">Buddy bestätigt</label>
+			<label index="template.userBuddyConfirm.message">Der Buddy wurde erfolgreich bestätigt!</label>
+			<label index="template.userBuddyList.header">Buddy-Liste</label>
+			<label index="template.userBuddyList.userDetailsLink">Link zur Benutzerseite</label>
+			<label index="template.userlist.header">Benutzerliste</label>
+			<label index="template.groupsProfile.header">Gruppenbeschreibung</label>
+			<label index="template.groupsProfile.label.title">Gruppenname</label>
+			<label index="template.groupsProfile.label.description">Beschreibung</label>
+			<label index="template.groupsProfile.label.editGroup">Gruppe bearbeiten</label>
+			<label index="template.groupsList.header">Groups List</label>
+			<label index="general.labels.groupdetails">Gruppen Details</label>
+			<label index="general.labels.groupsJoin">Gruppe beitreten</label>
+			<label index="general.labels.groupsLeave">Gruppe verlassen</label>
+			<label index="general.forms.errorMsg">Beim Ausfüllen des Formulars sind Fehler aufgetreten! Bitte überprüfen Sie die markierten Felder!</label>
+			<label index="general.forms.notEmptyErrMsg">Das Feld darf nicht leer sein!</label>
+			<label index="template.groupsEdit.header">Gruppe bearbeiten</label>
+			<label index="template.groupsEdit.label.groupsTitle">Gruppenname</label>
+			<label index="template.groupsEdit.label.groupsDescription">Beschreibung</label>
+			<label index="template.groupsEdit.label.submit">Speichern</label>
+			<label index="template.groupsJoin.header">Gruppe beitreten</label>
+			<label index="template.groupsJoin.label.submit">Bestätigen</label>
+			<label index="template.groupsJoin.message.confirmJoin">Drücken Sie auf 'Bestätigen' um der Gruppe beizutreten!</label>
+			<label index="template.groupsJoinConfirmation.header">Beitritt bestätigt!</label>
+			<label index="template.groupsJoinConfirmation.message.memberOfGroup">Sie sind jetzt Mitglied in der Gruppe </label>
+			<label index="template.groupsJoinAlreadyInGroup.header">Sie sind bereits Mitglied der Gruppe!</label>
+		</languageKey>
+	</data>
+</T3locallang>
+
