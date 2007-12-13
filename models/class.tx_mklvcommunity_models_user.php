@@ -81,8 +81,8 @@ class tx_mklvcommunity_models_user extends tx_mklvcommunity_model {
 		$searchCriteria->add(FeUsersPeer::USERNAME, $searchWord, Criteria::LIKE);
 		$users = FeUsersPeer::doSelect($searchCriteria);
 		$this->set('users', $users);
-
 	}
+
 	
 	
 	/**
